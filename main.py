@@ -7,16 +7,16 @@ def mul(num1, num2):
         return num1 * num2
 
     len_a = len1 if len1 > len2 else len2
-    half = int(len_a/2)
+    half = len_a // 2
 
     a = num1 // pow(10, half)
     b = int(num1 % pow(10, half))
     c = num2 // pow(10, half)
     d = int(num2 % pow(10, half))
 
-    ac = int(mul(a, c))
-    bd = int(mul(b, d))
-    ad_bc = int(mul(a + b, c + d)) - ac - bd
+    ac = mul(a, c)
+    bd = mul(b, d)
+    ad_bc = mul(a + b, c + d) - ac - bd
 
     if len_a % 2 == 1:
         answer = pow(10, (len_a - 1)) * ac + pow(10, half) * ad_bc + bd
